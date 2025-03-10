@@ -7,31 +7,31 @@ public class Crud_Arr {
         int size = 0;
 
         while (true) {
-            System.out.println("\nChọn thao tác:");
-            System.out.println("1. Thêm phần tử");
-            System.out.println("2. Hiển thị mảng");
-            System.out.println("3. Cập nhật phần tử");
-            System.out.println("4. Xóa phần tử");
-            System.out.println("5. Thoát");
-            System.out.print("Nhập lựa chọn: ");
+            System.out.println("\nChon thao tac:");
+            System.out.println("1. Them phan tu");
+            System.out.println("2. Hien thi mang");
+            System.out.println("3. Cap nhat phan tu");
+            System.out.println("4. Xoa phan tu");
+            System.out.println("5. Thoat");
+            System.out.print("Nhap lua chon: ");
             int choice = scanner.nextInt();
 
             switch (choice) {
 
                 case 1:
-                    System.out.print("Nhập số lượng phần tử cần thêm: ");
+                    System.out.print("Nhap so luong phan tu can them: ");
                     int numToAdd = scanner.nextInt();
 
                     if (size + numToAdd > array.length) {
-                        System.out.println("Không đủ chỗ trống trong mảng! Chỉ có thể thêm tối đa " + (array.length - size) + " phần tử.");
+                        System.out.println("Khong du cho trong mang! Chi co the them toi da " + (array.length - size) + " phan tu.");
                     } else {
-                        System.out.println("Nhập các phần tử:");
+                        System.out.println("Nhap cac phan tu:");
                         for (int i = 0; i < numToAdd; i++) {
                             System.out.print("Arr[" + (size + i) + "] = ");
                             array[size + i] = scanner.nextInt();
                         }
                         size += numToAdd;
-                        System.out.println("Đã thêm thành công " + numToAdd + " phần tử.");
+                        System.out.println("Da them thanh cong " + numToAdd + " phan tu.");
                     }
                     break;
                 case 2:
@@ -51,40 +51,39 @@ public class Crud_Arr {
                     break;
 
                 case 3:
-                    System.out.print("Nhập vị trí cần cập nhật (0 đến " + (size - 1) + "): ");
+                    System.out.print("Nhap vi tri can cap nhat (0 den " + (size - 1) + "): ");
                     int index = scanner.nextInt();
                     if (index >= 0 && index < size) {
-                        System.out.print("Nhập giá trị mới: ");
+                        System.out.print("Nhap gia tri moi: ");
                         array[index] = scanner.nextInt();
-                        System.out.println("Cập nhật thành công.");
+                        System.out.println("Cap nhat thanh cong.");
                     } else {
-                        System.out.println("Vị trí không hợp lệ!");
+                        System.out.println("Vi tri khong hop le!");
                     }
                     break;
 
                 case 4:
-                    System.out.print("Nhập vị trí cần xóa (0 đến " + (size - 1) + "): ");
+                    System.out.print("Nhap vi tri can xoa (0 den " + (size - 1) + "): ");
                     int deleteIndex = scanner.nextInt();
                     if (deleteIndex >= 0 && deleteIndex < size) {
                         for (int i = deleteIndex; i < size - 1; i++) {
                             array[i] = array[i + 1];
                         }
                         size--;
-                        System.out.println("Xóa thành công.");
+                        System.out.println("Xoa thanh cong.");
                     } else {
-                        System.out.println("Vị trí không hợp lệ!");
+                        System.out.println("Vi tri khong hop le!");
                     }
                     break;
                 case 5:
-                    System.out.println("Thoát chương trình.");
+                    System.out.println("Thoat chuong trinh.");
                     scanner.close();
                     return;
 
                 default:
-                    System.out.println("Lựa chọn không hợp lệ! Vui lòng nhập lại.");
+                    System.out.println("Lua chon khong hop le! Vui long nhap lai.");
                     break;
             }
         }
     }
 }
-
